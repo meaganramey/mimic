@@ -45,8 +45,20 @@ def create_mimic_dict(filename):
                 "who" : ["knows"]
             }
     """
-    # +++your code here+++
-    pass
+    result = {}
+    with open(filename) as f:
+        content = f.read()
+    words = content.split()
+    for i, word in enumerate(words):
+        if i == 0:
+            result[''] = word
+        elif i < len(words)-1:
+            if word not in result:
+                result[word] = words[i+1]
+            else:
+                result[word].append(words[i+1])
+    # print(result)
+    return result
 
 
 def print_mimic_random(mimic_dict, num_words):
@@ -58,8 +70,12 @@ def print_mimic_random(mimic_dict, num_words):
         - Randomly select a new word from the next-list
         - Repeat this process num_words times
     """
-    # +++your code here+++
-    pass
+    # for _ in range(num_words):
+    for _ in range(4):
+        start_word = ''
+        print(f'{start_word}')
+        word_list = mimic_dict.get(start_word)
+        print(word_list)
 
 
 def main(args):
