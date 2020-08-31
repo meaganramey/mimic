@@ -73,7 +73,7 @@ def print_mimic_random(mimic_dict, num_words):
     # print(mimic_dict.get('I')[random.randrange(0, 9)])
     # print(random.sample(mimic_dict.get('I'), num_words))
     start_word = ''
-    for _ in range(num_words):
+    for _ in range(0, num_words+1):
         print(start_word, end=' ')
         word_list = mimic_dict.get(start_word)
         if word_list is None:
